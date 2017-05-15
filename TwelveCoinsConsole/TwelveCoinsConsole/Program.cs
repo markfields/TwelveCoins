@@ -10,6 +10,7 @@ namespace TwelveCoinsConsole
 	{
 		static void Main(string[] args)
 		{
+			var startingKnowledge = new Knowledge(unknownCoins: 12, lightishCoins: 0, heavyishCoins: 0, referenceCoins: 0);
 		}
 	}
 }
