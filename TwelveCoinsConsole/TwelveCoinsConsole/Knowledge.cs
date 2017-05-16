@@ -37,6 +37,14 @@ namespace TwelveCoinsConsole
 
 			return Coins.TotalCount + specialCoins == 12;
 		}
+
+		internal List<Balance> ComputeBalancesToTry()
+		{
+			//throw new NotImplementedException();
+			return new List<Balance> { new Balance(new CoinCounts(unknownCoins: 1), new CoinCounts(unknownCoins: 1)) };
+		}
+
+
 	}
 
 	internal struct CoinCounts
