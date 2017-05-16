@@ -10,7 +10,13 @@ namespace TwelveCoinsConsole
 	{
 		static void Main(string[] args)
 		{
-			var startingKnowledge = new Knowledge(unknownCoins: 12, lightishCoins: 0, heavyishCoins: 0, referenceCoins: 0);
+			var startingKnowledge = new Knowledge(new CoinCounts(unknownCoins: 12, lightishCoins: 0, heavyishCoins: 0, referenceCoins: 0));
+
+			var strategyManager = new StrategyManager();
+
+			var strategyRoots = strategyManager.GetAllStrategies(startingKnowledge);
+
+			Console.WriteLine(strategyRoots.Any(strategyManager.AnyWinningStrategiesUnderNode));
 		}
 	}
 }

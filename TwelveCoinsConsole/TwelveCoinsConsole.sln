@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwelveCoinsConsole", "TwelveCoinsConsole\TwelveCoinsConsole.csproj", "{43B67A54-2DCB-4406-8A04-9437CBC793CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwelveCoinsConsoleUnitTests", "TwelveCoinsConsoleUnitTests\TwelveCoinsConsoleUnitTests.csproj", "{A22FED29-9A14-4C7B-9C94-5C784937D5E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{43B67A54-2DCB-4406-8A04-9437CBC793CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43B67A54-2DCB-4406-8A04-9437CBC793CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43B67A54-2DCB-4406-8A04-9437CBC793CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A22FED29-9A14-4C7B-9C94-5C784937D5E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A22FED29-9A14-4C7B-9C94-5C784937D5E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A22FED29-9A14-4C7B-9C94-5C784937D5E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A22FED29-9A14-4C7B-9C94-5C784937D5E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

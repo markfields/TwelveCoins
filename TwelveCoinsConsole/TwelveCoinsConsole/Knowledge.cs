@@ -6,26 +6,19 @@ using System.Threading.Tasks;
 
 namespace TwelveCoinsConsole
 {
-	internal struct Knowledge
+	internal class Knowledge
 	{
-		internal int UnknownCoins { get; }
-
-		internal int LightishCoins { get; }
-
-		internal int HeavyishCoins { get; }
-
-		internal int ReferenceCoins { get; }
+		internal CoinCounts Coins { get; }
 
 		internal bool FoundLightCoin { get; }
 
 		internal bool FoundHeavyCoin { get; }
 
-		internal Knowledge(int unknownCoins, int lightishCoins, int heavyishCoins, int referenceCoins)
+		internal bool AllAreEven => Coins.ReferenceCoins == 12;
+
+		internal Knowledge(CoinCounts coins)
 		{
-			UnknownCoins = unknownCoins;
-			LightishCoins = lightishCoins;
-			HeavyishCoins = heavyishCoins;
-			ReferenceCoins = referenceCoins;
+			Coins = coins;
 			FoundLightCoin = false;
 			FoundHeavyCoin = false;
 
@@ -42,7 +35,40 @@ namespace TwelveCoinsConsole
 
 			int specialCoins = (FoundLightCoin || FoundHeavyCoin) ? 1 : 0;
 
-			return UnknownCoins + LightishCoins + HeavyishCoins + ReferenceCoins + specialCoins == 12;
+			return Coins.TotalCount + specialCoins == 12;
+		}
+	}
+
+	internal struct CoinCounts
+	{
+		internal int UnknownCoins { get; }
+
+		internal int LightishCoins { get; }
+
+		internal int HeavyishCoins { get; }
+
+		internal int ReferenceCoins { get; }
+
+		internal int TotalCount => (UnknownCoins + LightishCoins + HeavyishCoins + ReferenceCoins);
+
+		internal CoinCounts(int unknownCoins = 0, int lightishCoins = 0, int heavyishCoins = 0, int referenceCoins = 0)
+		{
+			UnknownCoins = unknownCoins;
+			LightishCoins = lightishCoins;
+			HeavyishCoins = heavyishCoins;
+			ReferenceCoins = referenceCoins;
+		}
+	}
+
+	internal class Balance
+	{
+		internal CoinCounts Left { get; }
+		internal CoinCounts Right { get; }
+
+		internal Balance(CoinCounts left, CoinCounts right)
+		{
+			Left = left;
+			Right = right;
 		}
 	}
 }
